@@ -1,1 +1,2 @@
-# DGD-Dynamic-3D-Gaussians-Distillation
+# DGD: Dynamic 3D Gaussians Distillation
+
