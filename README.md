@@ -9,3 +9,7 @@ The code will be realese sooner...
 
 # BibTex
 
+
+# Acknowledgement
+
+Our repo is developed based on 3D Gaussian Splatting, DFFs and Deformable 3D Gaussians. Many thanks to the authors for opensourcing the codebase.
