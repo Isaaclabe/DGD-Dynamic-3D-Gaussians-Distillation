@@ -11,13 +11,12 @@ We tackle the task of learning dynamic 3D semantic radiance fields given a singl
 ## BibTex
 
 ```bibtex
-@misc{labe2024dgd,
-  title={DGD: Dynamic 3D Gaussians Distillation},
-  author={Isaac Labe and Noam Issachar and Itai Lang and Sagie Benaim},
-  year={2024},
-  eprint={arXiv:XXXX.XXXXX},
-  archivePrefix={arXiv}
-}
+@article{labe2024dgd,
+        author  = {Labe, Isaac and Issachar, Noam and Lang, Itai and Benaim, Sagie},
+        title   = {DGD: Dynamic 3D Gaussians Distillation},
+        journal = {arXiv:XXXX.XXXXX},
+        year    = {2024}
+        }
 ```
 
 ## Acknowledgement
