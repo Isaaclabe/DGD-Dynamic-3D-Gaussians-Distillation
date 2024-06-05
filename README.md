@@ -13,8 +13,7 @@ We tackle the task of learning dynamic 3D semantic radiance fields given a singl
 In our paper, we use:
 
 - synthetic dataset from [D-NeRF](https://www.albertpumarola.com/research/D-NeRF/index.html).
-- real-world dataset from [NeRF-DS](https://jokeryan.github.io/projects/nerf-ds/) and [Hyper-NeRF](https://hypernerf.github.io/).
-- The dataset in the supplementary materials comes from [DeVRF](https://jia-wei-liu.github.io/DeVRF/).
+- real-world dataset from [Hyper-NeRF](https://hypernerf.github.io/).
 
 We organize the datasets as follows:
 
@@ -23,10 +22,6 @@ We organize the datasets as follows:
 │   | D-NeRF 
 │     ├── hook
 │     ├── standup 
-│     ├── ...
-│   | NeRF-DS
-│     ├── as
-│     ├── basin
 │     ├── ...
 │   | HyperNeRF
 │     ├── interp
