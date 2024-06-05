@@ -38,11 +38,11 @@ We organize the datasets as follows:
 ### Environment
 
 ```shell
-git clone https://github.com/ingra14m/Deformable-3D-Gaussians --recursive
-cd Deformable-3D-Gaussians
+git clone https://github.com/Isaaclabe/DGD-Dynamic-3D-Gaussians-Distillation.git --recursive
+cd DGD-Dynamic-3D-Gaussians-Distillation
 
-conda create -n deformable_gaussian_env python=3.7
-conda activate deformable_gaussian_env
+conda create -n DGD_env python=3.7
+conda activate DGD_env
 
 # install pytorch
 pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 --extra-index-url https://download.pytorch.org/whl/cu116
