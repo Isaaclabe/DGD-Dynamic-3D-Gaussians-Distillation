@@ -48,6 +48,9 @@ conda activate DGD_env
 pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 --extra-index-url https://download.pytorch.org/whl/cu116
 
 # install dependencies
+pip install -q plyfile
+pip install git+https://github.com/openai/CLIP.git
+pip install timm
 pip install -r requirements.txt
 ```
 ### Setup the submodules
