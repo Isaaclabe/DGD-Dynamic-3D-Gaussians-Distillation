@@ -53,12 +53,51 @@ pip install git+https://github.com/openai/CLIP.git
 pip install timm
 pip install -r requirements.txt
 ```
+
 ### Setup the submodules
+
+To run the training and rendering code, you need to setup the rasterizer and the Lseg-CLIP model. This is done by using the following instruction,
+```shell
+# The following part setup the gaussian rasterizer module:
+
+cd DGD-Dynamic-3D-Gaussians-Distillation/submodules/diff-gaussian-rasterization
+python setup.py build_ext
+mkdir DGD-Dynamic-3D-Gaussians-Distillation/diff_gaussian_rasterization
+mv DGD-Dynamic-3D-Gaussians-Distillation/submodules/diff-gaussian-rasterization/build/lib.linux-x86_64-cpython-310/diff_gaussian_rasterization/_C.cpython-310-x86_64-linux-gnu.so DGD-Dynamic-3D-Gaussians-Distillation/diff_gaussian_rasterization
+mv DGD-Dynamic-3D-Gaussians-Distillation/submodules/diff-gaussian-rasterization/diff_gaussian_rasterization/__init__.py DGD-Dynamic-3D-Gaussians-Distillation/diff_gaussian_rasterization
+
+# The following part setup the simple knn module:
+
+cd DGD-Dynamic-3D-Gaussians-Distillation/submodules/simple-knn
+python setup_knn.py build_ext
+mkdir DGD-Dynamic-3D-Gaussians-Distillation/simple_knn
+mv DGD-Dynamic-3D-Gaussians-Distillation/submodules/simple-knn/build/lib.linux-x86_64-cpython-310/simple_knn/_C.cpython-310-x86_64-linux-gnu.so DGD-Dynamic-3D-Gaussians-Distillation/simple_knn
+
+# The following part setup the Lseg module:
+
+cd DGD-Dynamic-3D-Gaussians-Distillation/lseg_minimal
+python setup.py build develop
+rm -rf DGD-Dynamic-3D-Gaussians-Distillation/lseg_minimal/lseg
+!mv DGD-Dynamic-3D-Gaussians-Distillation/lseg_minimal/build/lib/lseg/ DGD-Dynamic-3D-Gaussians-Distillation/lseg_minimal
+rm -rf DGD-Dynamic-3D-Gaussians-Distillation/lseg_minimal/build
+```
 
 ## Train
 
+### Use the DINOv2 foundation model
+
+To run the optimizer using the DINOv2 foundation model, simply use
+
 ```shell
 python train.py -s path/to/your/dataset -m output/exp-name --fundation_model "DINOv2" --sementic_dimension 384
+```
+
+### Use the Lseg-CLIP foundation model
+
+To run the optimizer using the Lseg-CLIP foundation model, you need to download a pre-trained model of the Lseg minimal network [here](https://huggingface.co/datasets/IsaacLabe/Lseg_minimal_model/tree/main). Then, you can use
+
+```shell
+python train.py -s path/to/your/dataset -m output/exp-name --Lseg_model_path path/to/your/Lseg-model --fundation_model "Lseg_CLIP" --sementic_dimension 512 --loss_reduce 10
 ```
 
 ## BibTex
