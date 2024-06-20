@@ -365,8 +365,6 @@ python render.py -s path/to/your/dataset -m output/exp-name --Lseg_model_path pa
 
 To simplify training and rendering with this repository, I created a Colab file: ```DGD-Dynamic-3D-Gaussians-Distillation.ipynb```, which can be easily loaded and launched. I recommend using an A100 GPU to significantly reduce computation time during the runs.
 
-**comming soon...**
-
 ## BibTex
 
 ```bibtex
