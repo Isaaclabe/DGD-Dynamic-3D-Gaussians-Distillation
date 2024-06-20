@@ -55,7 +55,11 @@ pip install -r requirements.txt
 ```
 ### Setup the submodules
 
+## Train
 
+```shell
+python train.py -s path/to/your/d-nerf/dataset -m output/exp-name --eval --is_blender
+```
 
 ## BibTex
 
