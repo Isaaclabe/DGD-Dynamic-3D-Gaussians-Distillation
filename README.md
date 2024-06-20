@@ -186,7 +186,7 @@ python train.py -s path/to/your/dataset -m output/exp-name --fundation_model "DI
 
 ### Use the Lseg-CLIP foundation model
 
-To run the optimizer using the Lseg-CLIP foundation model, first download the pre-trained Lseg minimal network model from [this link](https://huggingface.co/datasets/IsaacLabe/Lseg_minimal_model/tree/main). Once downloaded, you can proceed with the optimizer
+To run the optimizer using the Lseg-CLIP foundation model, first download the pre-trained Lseg minimal network model from [this link](https://huggingface.co/IsaacLabe/Lseg_minimal_model). Once downloaded, you can proceed with the optimizer
 
 ```shell
 python train.py -s path/to/your/dataset -m output/exp-name --Lseg_model_path path/to/your/Lseg-model --fundation_model "Lseg_CLIP" --sementic_dimension 512 --loss_reduce 10
@@ -326,7 +326,7 @@ python render.py -s path/to/your/dataset -m output/exp-name --fundation_model "D
 
 ### Use the Lseg-CLIP foundation model
 
-To render the segentation using the Lseg-CLIP foundation model, first download the pre-trained Lseg minimal network model from [this link](https://huggingface.co/datasets/IsaacLabe/Lseg_minimal_model/tree/main). Once downloaded, you can proceed with the renderer
+To render the segentation using the Lseg-CLIP foundation model, first download the pre-trained Lseg minimal network model from [this link](https://huggingface.co/IsaacLabe/Lseg_minimal_model). Once downloaded, you can proceed with the renderer
 
 ```shell
 python render.py -s path/to/your/dataset -m output/exp-name --Lseg_model_path path/to/your/Lseg-model --fundation_model "Lseg_CLIP" --sementic_dimension 512  --iterations 40_000 --frame k --novel_views i --prompt "text" --thetas "ϴ"
