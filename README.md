@@ -58,7 +58,7 @@ pip install -r requirements.txt
 ## Train
 
 ```shell
-python train.py -s path/to/your/d-nerf/dataset -m output/exp-name --eval --is_blender
+python train.py -s path/to/your/dataset -m output/exp-name --fundation_model "DINOv2" --sementic_dimension 384
 ```
 
 ## BibTex
