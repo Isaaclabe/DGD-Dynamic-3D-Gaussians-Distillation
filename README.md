@@ -88,7 +88,7 @@ rm -rf DGD-Dynamic-3D-Gaussians-Distillation/lseg_minimal/build
 To run the optimizer using the DINOv2 foundation model, simply use
 
 ```shell
-python train.py -s path/to/your/dataset -m output/exp-name --fundation_model "DINOv2" --sementic_dimension 384
+python train.py -s path/to/your/dataset -m output/exp-name --fundation_model "DINOv2" --semantic_dimension 384
 ```
 
 <details>
@@ -102,7 +102,7 @@ python train.py -s path/to/your/dataset -m output/exp-name --fundation_model "DI
   The path where the pre-trained Lseg minimal model should be stored.
   #### --fundation_model
   The 2D foundation model used for semantic features. Options are ```"DINOv2"``` or ```"Lseg_CLIP"``` (```"DINOv2"``` by default).
-  #### --sementic_dimension
+  #### --semantic_dimension
   The dimension of the semantic feature, which is ```384``` for the DINOv2 model and ```512``` for the Lseg-CLIP model (```384``` by default).
   #### --loss_reduce
   The factor by which the semantic loss is reduced, calculated as ```loss = loss_color + loss_reduce * loss_semantic``` (```0.5``` by default).
@@ -189,7 +189,7 @@ python train.py -s path/to/your/dataset -m output/exp-name --fundation_model "DI
 To run the optimizer using the Lseg-CLIP foundation model, first download the pre-trained Lseg minimal network model from [this link](https://huggingface.co/IsaacLabe/Lseg_minimal_model). Once downloaded, you can proceed with the optimizer
 
 ```shell
-python train.py -s path/to/your/dataset -m output/exp-name --Lseg_model_path path/to/your/Lseg-model --fundation_model "Lseg_CLIP" --sementic_dimension 512 --loss_reduce 10
+python train.py -s path/to/your/dataset -m output/exp-name --Lseg_model_path path/to/your/Lseg-model --fundation_model "Lseg_CLIP" --semantic_dimension 512 --loss_reduce 10
 ```
 
 <details>
@@ -203,7 +203,7 @@ python train.py -s path/to/your/dataset -m output/exp-name --Lseg_model_path pat
   The path where the pre-trained Lseg minimal model should be stored.
   #### --fundation_model
   The 2D foundation model used for semantic features. Options are ```"DINOv2"``` or ```"Lseg_CLIP"``` (```"DINOv2"``` by default).
-  #### --sementic_dimension
+  #### --semantic_dimension
   The dimension of the semantic feature, which is ```384``` for the DINOv2 model and ```512``` for the Lseg-CLIP model (```384``` by default).
   #### --loss_reduce
   The factor by which the semantic loss is reduced, calculated as ```loss = loss_color + loss_reduce * loss_semantic``` (```0.5``` by default).
@@ -292,7 +292,7 @@ python train.py -s path/to/your/dataset -m output/exp-name --Lseg_model_path pat
 To render the segmentation using the DINOv2 foundation model, simply use
 
 ```shell
-python render.py -s path/to/your/dataset -m output/exp-name --fundation_model "DINOv2" --sementic_dimension 384 --iterations 40_000 --frame k --novel_views i --points "(x1,y1)" "(x2,y2)" --thetas "ϴ1" "ϴ2"
+python render.py -s path/to/your/dataset -m output/exp-name --fundation_model "DINOv2" --semantic_dimension 384 --iterations 40_000 --frame k --novel_views i --points "(x1,y1)" "(x2,y2)" --thetas "ϴ1" "ϴ2"
 ```
 
 <details>
@@ -306,7 +306,7 @@ python render.py -s path/to/your/dataset -m output/exp-name --fundation_model "D
   The path where the pre-trained Lseg minimal model should be stored.
   #### --fundation_model
   The 2D foundation model used for semantic features. Options are ```"DINOv2"``` or ```"Lseg_CLIP"``` (```"DINOv2"``` by default).
-  #### --sementic_dimension
+  #### --semantic_dimension
   The dimension of the semantic feature, which is ```384``` for the DINOv2 model and ```512``` for the Lseg-CLIP model (```384``` by default).
   #### --iterations
   The total number of iterations for training (```40_000``` by default).
@@ -329,7 +329,7 @@ python render.py -s path/to/your/dataset -m output/exp-name --fundation_model "D
 To render the segentation using the Lseg-CLIP foundation model, first download the pre-trained Lseg minimal network model from [this link](https://huggingface.co/IsaacLabe/Lseg_minimal_model). Once downloaded, you can proceed with the renderer
 
 ```shell
-python render.py -s path/to/your/dataset -m output/exp-name --Lseg_model_path path/to/your/Lseg-model --fundation_model "Lseg_CLIP" --sementic_dimension 512  --iterations 40_000 --frame k --novel_views i --prompt "text" --thetas "ϴ"
+python render.py -s path/to/your/dataset -m output/exp-name --Lseg_model_path path/to/your/Lseg-model --fundation_model "Lseg_CLIP" --semantic_dimension 512  --iterations 40_000 --frame k --novel_views i --prompt "text" --thetas "ϴ"
 ```
 
 <details>
@@ -343,7 +343,7 @@ python render.py -s path/to/your/dataset -m output/exp-name --Lseg_model_path pa
   The path where the pre-trained Lseg minimal model should be stored.
   #### --fundation_model
   The 2D foundation model used for semantic features. Options are ```"DINOv2"``` or ```"Lseg_CLIP"``` (```"DINOv2"``` by default).
-  #### --sementic_dimension
+  #### --semantic_dimension
   The dimension of the semantic feature, which is ```384``` for the DINOv2 model and ```512``` for the Lseg-CLIP model (```384``` by default).
   #### --iterations
   The total number of iterations for training (```40_000``` by default).
