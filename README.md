@@ -185,7 +185,6 @@ python train.py -s path/to/your/dataset -m output/exp-name --fundation_model "DI
 </details>
 <br>
 
-
 ### Use the Lseg-CLIP foundation model
 
 To run the optimizer using the Lseg-CLIP foundation model, first download the pre-trained Lseg minimal network model from [this link](https://huggingface.co/datasets/IsaacLabe/Lseg_minimal_model/tree/main). Once downloaded, you can proceed with the optimizer
@@ -284,6 +283,82 @@ python train.py -s path/to/your/dataset -m output/exp-name --Lseg_model_path pat
   #### --percent_dense
   Percentage of scene extent (0--1) a point must exceed to be forcibly densified, ```0.01``` by default.
 
+</details>
+<br>
+
+## Render
+
+### Use the DINOv2 foundation model
+
+To render the segmentation using the DINOv2 foundation model, simply use
+
+```shell
+python render.py -s path/to/your/dataset -m output/exp-name --fundation_model "DINOv2" --sementic_dimension 384 --iterations 40_000 --frame k --novel_views i --points "(x1,y1)" "(x2,y2)" --thetas "ϴ1" "ϴ2"
+```
+
+<details>
+<summary><span style="font-weight: bold;">Command Line Arguments for render.py</span></summary>
+      
+  #### --source_path / -s
+  Path to the source directory containing a COLMAP or Synthetic NeRF data set.
+  #### --model_path / -m 
+  Path where the trained model should be stored (```output/<random>``` by default).
+  #### --Lseg_model_path 
+  The path where the pre-trained Lseg minimal model should be stored.
+  #### --fundation_model
+  The 2D foundation model used for semantic features. Options are ```"DINOv2"``` or ```"Lseg_CLIP"``` (```"DINOv2"``` by default).
+  #### --sementic_dimension
+  The dimension of the semantic feature, which is ```384``` for the DINOv2 model and ```512``` for the Lseg-CLIP model (```384``` by default).
+  #### --iterations
+  The total number of iterations for training (```40_000``` by default).
+  #### --frame
+  Specifies the number of training frames in the dataset.
+  #### --novel_views
+  Command to choose whether to render novel views or training views: if ```novel_views = -1```, training views are rendered; if ```novel_views = index_of_novel_view```, the novel view with the specified index is rendered.
+  #### --points
+  A list of tuples ```(x, y)``` representing the coordinates of pixels in the first training frame (similar to clicking on the image).
+  #### --thetas
+  A list of thresholds (```float```) corresponding to the list of points, used to control the granularity of the segmentation.
+  #### --prompt
+  Text prompt for the Lseg-CLIP segmentation.
+  
+</details>
+<br>
+
+### Use the Lseg-CLIP foundation model
+
+To render the segentation using the Lseg-CLIP foundation model, first download the pre-trained Lseg minimal network model from [this link](https://huggingface.co/datasets/IsaacLabe/Lseg_minimal_model/tree/main). Once downloaded, you can proceed with the renderer
+
+```shell
+python render.py -s path/to/your/dataset -m output/exp-name --Lseg_model_path path/to/your/Lseg-model --fundation_model "Lseg_CLIP" --sementic_dimension 512  --iterations 40_000 --frame k --novel_views i --prompt "text" --thetas "ϴ"
+```
+
+<details>
+<summary><span style="font-weight: bold;">Command Line Arguments for render.py</span></summary>
+      
+  #### --source_path / -s
+  Path to the source directory containing a COLMAP or Synthetic NeRF data set.
+  #### --model_path / -m 
+  Path where the trained model should be stored (```output/<random>``` by default).
+  #### --Lseg_model_path 
+  The path where the pre-trained Lseg minimal model should be stored.
+  #### --fundation_model
+  The 2D foundation model used for semantic features. Options are ```"DINOv2"``` or ```"Lseg_CLIP"``` (```"DINOv2"``` by default).
+  #### --sementic_dimension
+  The dimension of the semantic feature, which is ```384``` for the DINOv2 model and ```512``` for the Lseg-CLIP model (```384``` by default).
+  #### --iterations
+  The total number of iterations for training (```40_000``` by default).
+  #### --frame
+  Specifies the number of training frames in the dataset.
+  #### --novel_views
+  Command to choose whether to render novel views or training views: if ```novel_views = -1```, training views are rendered; if ```novel_views = index_of_novel_view```, the novel view with the specified index is rendered.
+  #### --points
+  A list of tuples ```(x, y)``` representing the coordinates of pixels in the first training frame (similar to clicking on the image).
+  #### --thetas
+  A list of thresholds (```float```) corresponding to the list of points, used to control the granularity of the segmentation.
+  #### --prompt
+  Text prompt for the Lseg-CLIP segmentation.
+  
 </details>
 <br>
 
