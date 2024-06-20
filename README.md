@@ -78,7 +78,7 @@ mv DGD-Dynamic-3D-Gaussians-Distillation/submodules/simple-knn/build/lib.linux-x
 cd DGD-Dynamic-3D-Gaussians-Distillation/lseg_minimal
 python setup.py build develop
 rm -rf DGD-Dynamic-3D-Gaussians-Distillation/lseg_minimal/lseg
-!mv DGD-Dynamic-3D-Gaussians-Distillation/lseg_minimal/build/lib/lseg/ DGD-Dynamic-3D-Gaussians-Distillation/lseg_minimal
+mv DGD-Dynamic-3D-Gaussians-Distillation/lseg_minimal/build/lib/lseg/ DGD-Dynamic-3D-Gaussians-Distillation/lseg_minimal
 rm -rf DGD-Dynamic-3D-Gaussians-Distillation/lseg_minimal/build
 ```
 
