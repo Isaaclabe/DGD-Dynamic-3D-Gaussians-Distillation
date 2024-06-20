@@ -9,7 +9,7 @@ We tackle the task of learning dynamic 3D semantic radiance fields given a singl
 **The code will be released soon...**
 ## Pipeline
 
-![Teaser image](assets/pipeline.png)
+![Teaser image](system.png)
 
 
 ## Dataset
