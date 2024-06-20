@@ -1,0 +1,16 @@
+tqdm
+imageio==2.27.0
+opencv-python
+imageio-ffmpeg
+scipy
+dearpygui
+lpips
+ninja
+pytorch_lightning
+git+https://github.com/zhanghang1989/PyTorch-Encoding/
+git+https://github.com/openai/CLIP.git
+dinov2
+segment-anything
+git+https://github.com/zhanghang1989/PyTorch-Encoding/
+dinov2
+segment-anything
